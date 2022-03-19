@@ -12,6 +12,7 @@ int main(){
         printf("5. Delete(remove) information\n");
         printf("6. Exit\n************************************\n What do you want to do?? ");
         scanf("%d",&choice);
+        fflush(stdin);
         switch(choice){
             case 1:
                 system("cls");

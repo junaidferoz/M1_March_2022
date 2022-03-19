@@ -11,6 +11,8 @@ enum limits{
 typedef struct patient{
     char name[LIM_NAME];
     char disease[LIM_DISEASE];
-}patient;
+    int cabin_no,age;
+    long phone_no;
+}pat[100];
 
 #endif
