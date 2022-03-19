@@ -10,6 +10,7 @@
 #include<stdio.h>
 #include<windows.h>
 #include<string.h>
+#include<stdlib.h>
 
 #include "patient.h"
 void get_patient_data(char* name);
