@@ -47,4 +47,19 @@ int discharge_patient(const char* pat_name){
     if(NULL!=file)
         fclose(file);
 }
+int display_patient(void){
+    pat patient_;
+    FILE *file;
+    int c=0; //count
+    if((file=fopen("patients.bin","rb"))==NULL)
+        return -2;
+    printf("\n*****Patient details*****");
+    while(fread(&patient_,sizeof(pat),1,file) == 1){
+        printf("Name: %s\nSuffering from: %s\nAge: %d\nCabin no: %d\nPhone number: %ld",patient_.name,patient_.disease,patient_.age,patient_.cabin_no,patient_.phone_no);
+        c++;
+    }
+    printf("\n*****Patients List*****\n");
+    fclose(file);
+    return c;
+}
 
