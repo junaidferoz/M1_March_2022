@@ -2,10 +2,9 @@
  * @file info.h
  * 
  */
-#ifndef _INFO_H_
-#define _INFO_H_
+#ifndef _PATIENT_H_
+#define _PATIENT_H_
 enum limits{
-    LIM_NAME = 32,
     LIM_DISEASE = 32,
     LIM_NAME = 100
 };
