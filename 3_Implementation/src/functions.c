@@ -4,7 +4,7 @@
 int add_patient(pat* new_patient){
 
     FILE *file;
-    if((file = fopen("patients.bin",'ab+')) == NULL)
+    if((file = fopen("patients.bin","ab+")) == NULL)
         return -1;
     fwrite(new_patient, sizeof(pat), file);
     __fpurge(stdin);
@@ -20,7 +20,7 @@ int discharge_patient(const char* pat_name){
     if(file==NULL)
         return -2;
     else{
-        filetemp = fopen("temp.bin",'wb');
+        filetemp = fopen("temp.bin","wb");
         if(filetemp == NULL)
             res = -3;
         else{

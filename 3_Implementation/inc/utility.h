@@ -7,10 +7,9 @@
 #ifndef _UTILITY_H_
 #define _UTILITY_H_
 
-#include<stdio.h>
-#include<windows.h>
-#include<string.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 #include "patient.h"
 void get_patient_data(char* name);

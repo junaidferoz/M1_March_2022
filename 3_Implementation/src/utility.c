@@ -21,12 +21,12 @@ void get_patient_data(char* name){
             }
         }
     }while(w!='\n');
-    *(name*r) = '\0';
+    *(name+r) = '\0';
 }
 void get_patient_details(pat* patient){
     printf("\nEnter name: ");
     __fpurge(stdin);
-    get_patient_data(patinet->name);
+    get_patient_data(patient->name);
     printf("\nWhat is the patient suffering from? ");
     __fpurge(stdin);
     get_patient_data(patient->disease);
@@ -38,5 +38,5 @@ void get_patient_details(pat* patient){
     get_patient_data(patient->age);
     printf("Cabin?? ");
     __fpurge(stdin);
-    get_patient_data(patient->data);
+    get_patient_data(patient->cabin_no);
 }

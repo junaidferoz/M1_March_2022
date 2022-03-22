@@ -1,6 +1,6 @@
-#include<windows.h>
 #include<stdio.h>
 #include<stdlib.h>
+#include "hospital.h"
 typedef enum options{
     NONE,
     ADMIT_PATIENT,
@@ -17,8 +17,9 @@ int main(){
         printf("1.Admit patient\n2.Edit patient details\n3.Discharge patient\4.Find patient details\n5.Exit\n");
         printf("*****************************************\n");
         printf("\nEnter your choice: ");
-        __fpurge(stdin);
+        fflush(stdin);
         scanf("%d",&ch);
+        int count_patient = display_patient();
         switch(ch){
             case ADMIT_PATIENT:
                 pat *new_patient = (pat *)calloc(1,sizeof(pat));
@@ -30,7 +31,7 @@ int main(){
                 free(new_patient);
             break;
             case DISCHARGE_PATIENT:
-                int count_patient = display_patient();
+                //int count_patient = display_patient();
                 if(count_patient > 0){
                     char pat_name[LIM_NAME] = "";
                     printf("Enter patient's name from the list above: ");
@@ -49,7 +50,8 @@ int main(){
                     printf("\n***There are no patients to be found***\n");
             break;
             case MODIFY_DETAIL:
-                int count_patient = display_patient();
+                /*int count_patient;
+                count_patient = display_patient();*/
                 if(count_patient > 0){
                     char pat_name[LIM_NAME] = "";
                     pat *new_patient = (pat *)calloc(1,sizeof(pat));
@@ -71,7 +73,7 @@ int main(){
                     printf("\n***There are no patients to be found***\n");
             break;
             case FIND_PATIENT:
-                int count_patient = display_patient();
+                //int count_patient = display_patient();
                 if(count_patient > 0){
                     char pat_name[LIM_NAME] = "";
                     printf("\nWho do you want to find here? ");
