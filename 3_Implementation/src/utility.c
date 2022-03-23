@@ -2,9 +2,9 @@
 #include  "patient.h"
 
 void get_patient_data(char* name){
-    int r=0,c;
+    int r=0,c,cc;
     char w,wch;
-    __fpurge(stdin);
+    while((cc = getchar()) != '\n' && cc != EOF) {}
     do{
         w=getchar();
         if(w!='\n'){
@@ -24,19 +24,20 @@ void get_patient_data(char* name){
     *(name+r) = '\0';
 }
 void get_patient_details(pat* patient){
+    int c;
     printf("\nEnter name: ");
-    __fpurge(stdin);
+    while((c = getchar()) != '\n' && c != EOF) {}
     get_patient_data(patient->name);
     printf("\nWhat is the patient suffering from? ");
-    __fpurge(stdin);
+    while((c = getchar()) != '\n' && c != EOF) {}
     get_patient_data(patient->disease);
     printf("\nCan you please tell me his phone number? ");
-    __fpurge(stdin);
+    while((c = getchar()) != '\n' && c != EOF) {}
     get_patient_data(patient->phone_no);
     printf("\nHis age please? ");
-    __fpurge(stdin);
+    while((c = getchar()) != '\n' && c != EOF) {}
     get_patient_data(patient->age);
     printf("Cabin?? ");
-    __fpurge(stdin);
+    while((c = getchar()) != '\n' && c != EOF) {}
     get_patient_data(patient->cabin_no);
 }

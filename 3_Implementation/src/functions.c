@@ -1,13 +1,13 @@
 #include "hospital.h"
-#include "utility.h"
 
 int add_patient(pat* new_patient){
 
     FILE *file;
+    int c;
     if((file = fopen("patients.bin","ab+")) == NULL)
         return -1;
-    fwrite(new_patient, sizeof(pat), file);
-    __fpurge(stdin);
+    fwrite(new_patient, sizeof(pat),1, file);
+    while((c = getchar()) != '\n' && c != EOF) {}
     fclose(file);
 
     return 0;
@@ -61,5 +61,44 @@ int display_patient(void){
     printf("\n*****Patients List*****\n");
     fclose(file);
     return c;
+}
+
+int find_patient(const char* name){
+    pat new_patient;
+    FILE *file;
+    file = fopen("patients.bin", "rb");
+    if(file == NULL)
+        return -2;
+    while(fread(&new_patient,sizeof(pat),1,file) == 1){
+        if(strcmp(new_patient.name,name) == 0){
+            printf("\nPatient details for %s: \n",name);
+            printf("Name: %s\nPhone number: %ld\nReason for admission in hospital: %s\nAge: %d\nStaying in Cabin: %d\n",new_patient.name,new_patient.phone_no,new_patient.disease,new_patient.age,new_patient.cabin_no);
+            fclose(file);
+            return 0;
+        }
+    }
+    fclose(file);
+    return -1;
+}
+int edit_patient_details(char* name,pat *update_patient){
+    int res=0,f=0;
+    FILE *file;
+    pat old_patient;
+    file = fopen("patients.bin","rb+");
+    if(file == NULL)
+        return -2;
+    else{
+        while(fread(&old_patient,sizeof(pat),1,file) == 1){
+            if(strcmp(name,old_patient.name) == 0){
+                fseek(file, -sizeof(pat), SEEK_CUR);
+                fwrite(update_patient,sizeof(pat),1,file);
+                f=1;
+                break;
+            }
+        }
+        res=(f==1?0:-1);
+        fclose(file);
+    }
+    return res;
 }
 

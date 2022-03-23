@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
 #include "hospital.h"
+#include "utility.h"
+#include "patient.h"
 typedef enum options{
     NONE,
     ADMIT_PATIENT,
@@ -11,13 +11,14 @@ typedef enum options{
 }ops;
 int main(){
     int ch = NONE; //choice
+    int c;
     printf("*********WELCOME TO JFK HOSPITAL*********");
     while(1){
         printf("\nSelect your option: \n");
         printf("1.Admit patient\n2.Edit patient details\n3.Discharge patient\4.Find patient details\n5.Exit\n");
         printf("*****************************************\n");
         printf("\nEnter your choice: ");
-        fflush(stdin);
+        while((c = getchar()) != '\n' && c != EOF) {}
         scanf("%d",&ch);
         int count_patient = display_patient();
         switch(ch){
@@ -77,7 +78,7 @@ int main(){
                 if(count_patient > 0){
                     char pat_name[LIM_NAME] = "";
                     printf("\nWho do you want to find here? ");
-                    __fpurge(stdin);
+                    while((c = getchar()) != '\n' && c != EOF) {}
                     get_patient_data(pat_name);
                     switch(find_patient(pat_name)){
                         case -1:
