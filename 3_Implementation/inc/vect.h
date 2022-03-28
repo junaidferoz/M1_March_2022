@@ -11,14 +11,15 @@
 #ifndef _VECT_H_
 #define _VECT_H_
 #include<stdio.h>
+#include<math.h>
 typedef struct vect{
-    int x=0,y=0,z=0;
+    int x;int y;int z;
 }vector;
 /**
  * @brief define vector
  *  defines the vector
  */
-vector define_vector(int x,int y,int z);
+vector define_vector(int,int,int);
 /**
  * @brief add two vectors
  * @param vct1 a vector
