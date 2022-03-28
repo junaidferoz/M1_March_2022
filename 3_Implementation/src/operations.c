@@ -4,7 +4,7 @@ double add(double num1,double num2) {return(num1+num2);}
 double subtract(double num1,double num2) {return(num1-num2);}
 double multiply(double num1,double num2) {return(num1*num2);}
 double divide(double num1,double num2) {return(num1/num2);}
-double modulus(double num1,double num2) {return(num1%num2);}
+double modulus(double num1,double num2) {return((int)num1%(int)num2);}
 double power(double num1,double num2){
     double ans=1;
     for(int i=0;i<num2;i++)
@@ -12,7 +12,7 @@ double power(double num1,double num2){
     return ans;
 }
 long factorial(double num){
-    if num==0||num==1
+    if(num==0||num==1)
         return 1;
     else
         return(num*factorial(num-1));

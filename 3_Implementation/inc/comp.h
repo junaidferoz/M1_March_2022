@@ -12,7 +12,7 @@
 #include<stdio.h>
 #include<math.h>
 typedef struct complex{
-    double real=0,imaginary=0;
+    double real,imaginary;
 }complex;
 /**
  * @brief Set the number object
