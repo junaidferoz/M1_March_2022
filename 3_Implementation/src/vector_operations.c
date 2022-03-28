@@ -6,14 +6,14 @@ vector define_vector(int a,int b,int c){
     ans.z=c;
     return ans;
 }
-vector addition(vector vct1,vector vct2){
+vector sum(vector vct1,vector vct2){
     vector sum;
     sum.x = vct1.x+vct2.x;
     sum.y = vct1.y+vct2.y;
     sum.z = vct1.z+vct2.z;
     return sum;
 }
-vector subtraction(vector vct1,vector vct2){
+vector difference(vector vct1,vector vct2){
     vector diff;
     diff.x = vct1.x-vct2.x;
     diff.y = vct1.y-vct2.y;

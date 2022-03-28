@@ -1,6 +1,9 @@
 #include "comp.h"
 #include "vect.h"
 #include "operations.h"
+void standard_mode(void);
+void complex_mode(void);
+void vector_mode(void);
 char choice;
 int main(){
     char mode;
@@ -14,10 +17,10 @@ int main(){
             standard_mode();
         break;
         case 2:
-            complex_mode();
+            //complex_mode();
         break;
         case 3:
-            vector_mode();
+            //vector_mode();
         break;
         default:
             printf("Enter the valid choice!!");
@@ -71,7 +74,7 @@ void standard_mode(){
         case 7:
             printf("Enter the number: ");
             scanf("%lf",&num1);
-            printf("square root = %ld",root(num1));
+            printf("square root = %lf",root(num1));
         break;
         default:
             printf("Enter the valid choice!!");

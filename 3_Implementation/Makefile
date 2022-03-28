@@ -1,19 +1,21 @@
 #Name of the project being done
-PROJECT_NAME = hospitalmanagement
+PROJECT_NAME = calculator
 #Name of test project being done
 TEST_PROJECT_NAME = test_$(PROJECT_NAME)
 #output folder
 BUILD = build
-SRC = hospitalmanagement.c\
-src/functions.c\
-src/utility.c\
+SRC = main.c\
+src/operations.c\
+src/complex_operations.c\
+src/vector_operations.c
 #test source files
-TEST_SRC = src/functions.c\
-src/utility.c\
-test/hospital_test.c\
+TEST_SRC = src/operations.c\
+src/complex_operations.c\
+src/vector_operations.c\
+test/test_calc.c\
 unity/unity.c\
 
-COV_SRC = hospital_test.c
+COV_SRC = calc_test.c
 #here we are adding all the include files
 INC = -I inc\
 -I unity\
