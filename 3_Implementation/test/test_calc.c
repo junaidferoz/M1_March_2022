@@ -5,10 +5,10 @@
 
 #define PROJECT_NAME "Calculator"
 
-void test_addition(void);
-void test_subtraction(void);
-void test_multiplication(void);
-void test_division(void);
+void test_add(void);
+void test_subtract(void);
+void test_multiply(void);
+void test_divide(void);
 void test_modulus(void);
 void test_power(void);
 void test_factorial(void);
@@ -33,10 +33,10 @@ int main(){
 
     UNITY_BEGIN();
 
-    RUN_TEST(test_addition);
-    RUN_TEST(test_subtraction);
-    RUN_TEST(test_multiplication);
-    RUN_TEST(test_division);
+    RUN_TEST(test_add);
+    RUN_TEST(test_subtract);
+    RUN_TEST(test_multiply);
+    RUN_TEST(test_divide);
     RUN_TEST(test_modulus);
     RUN_TEST(test_factorial);
     RUN_TEST(test_squareroot);
@@ -57,3 +57,24 @@ void test_multiply(void){
     TEST_ASSERT_EQUAL(0,multiply(5,0)); 
     TEST_ASSERT_EQUAL(78,add(35,3)); //fail case
 }
+void test_divide(void){
+    TEST_ASSERT_EQUAL(2,divide(10,5));
+    TEST_ASSERT_EQUAL(-3,multiply(9,-3)); 
+    TEST_ASSERT_EQUAL(7,add(35,3)); //fail case
+}
+void test_modulus(void){
+    TEST_ASSERT_EQUAL(0,modulus(10,2));
+    TEST_ASSERT_EQUAL(2,modulus(8,3));
+    TEST_ASSERT_EQUAL(5,modulus(9,5));//fail case
+}
+void test_squareroot(void){
+    TEST_ASSERT_EQUAL(4,root(16));
+    TEST_ASSERT_EQUAL(2,root(4));
+    TEST_ASSERT_EQUAL(3,root(5)); //fail case
+}
+void test_factorial(void){
+    TEST_ASSERT_EQUAL(6,factorial(3));
+    TEST_ASSERT_EQUAL(24,factorial(4));
+    TEST_ASSERT_EQUAL(5098,factorial(7)); //fail case
+}
+
