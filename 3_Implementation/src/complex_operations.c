@@ -30,6 +30,6 @@ double absolute(complex comp){
 }
 double angle(complex num){
     double ans=0;
-    ans = atan(abs(num.imaginary)/abs(num.real));
+    ans = atan(abs((int)num.imaginary)/abs((int)num.real));
     return ans;
 }
