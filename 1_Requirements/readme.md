@@ -1,11 +1,11 @@
 # REQUIREMENTS
 #### _INTRODUCTION_
-* The mini porject which I am going to implement is a scientific calculator. 
-* A scientific calculator is used to do scientific calculations. 
-* I am implementing complex and vector functions in my mini project
-* This priject is very helpful for students and working professionals who want a calculator to perform calculations.
+ * The mini porject which I am going to implement is a scientific calculator. 
+ * A scientific calculator is used to do scientific calculations. 
+ * I am implementing complex and vector functions in my mini project
+ * This priject is very helpful for students and working professionals who want a calculator to perform calculations.
 #### _RESEARCH_
-* Scientific calculator
+ * Scientific calculator
    1. Calculate basic functions like addition, subtraction, multiplication, division.<br>
    2. Also has modulus and factorial calculations.<br>
    3. It has two modes - Complex and vector mode. <br>
