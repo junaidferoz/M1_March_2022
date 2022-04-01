@@ -20,11 +20,12 @@ long factorial(double num){
         return(num*factorial(num-1));
 }
 double root(double num){
-    double ans=1;int i=0;
+    double ans=1;
     if (num<0)
         return 0;
     else{
     while(1){
+        int i=0;
         i=i+1;
         ans = (num/ans + ans)/2;
         if(i==num+1)    break;

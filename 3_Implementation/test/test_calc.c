@@ -49,8 +49,8 @@ void test_add(void){
 }
 void test_subtract(void){
     TEST_ASSERT_EQUAL(10,subtract(30,20));
-    TEST_ASSERT_EQUAL(-20,add(20,40)); 
-    TEST_ASSERT_EQUAL(0,add(20,30)); //fail case
+    TEST_ASSERT_EQUAL(-20,subtract(20,40)); 
+    TEST_ASSERT_EQUAL(0,subtract(20,30)); //fail case
 }
 void test_multiply(void){
     TEST_ASSERT_EQUAL(10,multiply(5,2));
@@ -78,3 +78,6 @@ void test_factorial(void){
     TEST_ASSERT_EQUAL(5098,factorial(7)); //fail case
 }
 
+void test_complex_add(void){
+    
+}
