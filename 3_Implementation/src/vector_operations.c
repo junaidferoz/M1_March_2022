@@ -21,9 +21,9 @@ vector difference(vector vct1,vector vct2){
     return diff;
 }
 int dot(vector vct1,vector vct2){
-    int sum=0;
-    sum=(vct1.x*vct2.x)+(vct1.y*vct2.y)+(vct1.z*vct2.z);
-    return sum;
+    int prod=0;
+    prod=(vct1.x*vct2.x)+(vct1.y*vct2.y)+(vct1.z*vct2.z);
+    return prod;
 }
 float magnitude(vector vect){
     float ans = 0.0;
