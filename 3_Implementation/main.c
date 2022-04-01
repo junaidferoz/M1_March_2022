@@ -5,9 +5,9 @@ void standard_mode(void);
 void complex_mode(void);
 void vector_mode(void);
 int main(){
-    int mode;char c;
+    int mode;char c='y';
     printf("*******START******\n");
-    do{
+    for(;c=='Y'||c=='y';){
     printf("\n1. COMP\n2. CMPLX\n3. VECT\n");
     printf("******************");
     printf("\nEnter your choice: ");
@@ -22,7 +22,7 @@ int main(){
         printf("Enter a valid choice!!");
     printf("Do you want to continue (Y/N)? ");
     scanf("%c",&c);
-    }while(c=='Y'||c=='y');
+    }
     return 0;
 }
 void standard_mode(){
@@ -95,7 +95,7 @@ void complex_mode(){
             num2 = set_number(re,img);
             re=0;img=0;
             complex sum = addition(num1,num2);
-            printf("\nThe sum is : %lf+%lf i",sum.real,sum.imaginary);
+            printf("\nThe sum is : %lf+%lf i\n",sum.real,sum.imaginary);
         break;
         case 2:
             printf("\nEnter the real and imaginary parts of the first number: ");
@@ -107,7 +107,7 @@ void complex_mode(){
             num2 = set_number(re,img);
             re=0;img=0;
             complex diff = subtraction(num1,num2);
-            printf("\nThe difference is : %lf+%lf i",diff.real,diff.imaginary);
+            printf("\nThe difference is : %lf+%lf i\n",diff.real,diff.imaginary);
         break;
         case 3:
             printf("\nEnter the real and imaginary parts of the first number: ");
@@ -119,7 +119,7 @@ void complex_mode(){
             num2 = set_number(re,img);
             re=0;img=0;
             complex prod = multiplication(num1,num2);
-            printf("\nThe product is : %lf+%lf i",prod.real,prod.imaginary);
+            printf("\nThe product is : %lf+%lf i\n",prod.real,prod.imaginary);
         break;
         case 4:
             printf("\nEnter the real and imaginary parts of the number: ");
@@ -127,7 +127,7 @@ void complex_mode(){
             num1 = set_number(re,img);
             re=0;img=0;
             double mag = absolute(num1);
-            printf("\nThe magnitude is: %lf",mag);
+            printf("\nThe magnitude is: %lf\n",mag);
         break;
         case 5:
             printf("\nEnter the real and imaginary parts of the number: ");
@@ -135,10 +135,61 @@ void complex_mode(){
             num1 = set_number(re,img);
             re=0;img=0;
             double ang = angle(num1);
-            printf("\nThe angle is: %lf",ang);
+            printf("\nThe angle is: %lf\n",ang);
         break;
         default:
             printf("Enter a valid choice!!");
         break;
+    }
+}
+void vector_mode(void){
+    int choice;
+    vector vct1,vct2;
+    int x,y,z;
+    printf("\n1. Addition\n2. Subtraction\n3. Dot product\n");
+    printf("4. Magnitude\n\nEnter your choice? ");
+    scanf("%d",&choice);
+    if(choice==1){
+        printf("\nEnter the coefficients of first vector: ");
+        scanf("%d %d %d",&x,&y,&z);
+        vct1 = define_vector(x,y,z);
+        x=0,y=0,z=0;
+        printf("\nEnter the coefficients of second vector: ");
+        scanf("%d %d %d",&x,&y,&z);
+        vct2 = define_vector(x,y,z);
+        vector ans = sum(vct1,vct2);
+        printf("\nThe sum is : %di + %dj +%dk\n",ans.x,ans.y,ans.z);
+    }
+    else if(choice==2){
+         printf("\nEnter the coefficients of first vector: ");
+        scanf("%d %d %d",&x,&y,&z);
+        vct1 = define_vector(x,y,z);
+        x=0,y=0,z=0;
+        printf("\nEnter the coefficients of second vector: ");
+        scanf("%d %d %d",&x,&y,&z);
+        vct2 = define_vector(x,y,z);
+        vector ans = difference(vct1,vct2);
+        printf("\nThe difference is : %di + %dj +%dk\n",ans.x,ans.y,ans.z);
+    }
+    else if(choice==3){
+        printf("\nEnter the coefficients of first vector: ");
+        scanf("%d %d %d",&x,&y,&z);
+        vct1 = define_vector(x,y,z);
+        x=0,y=0,z=0;
+        printf("\nEnter the coefficients of second vector: ");
+        scanf("%d %d %d",&x,&y,&z);
+        vct2 = define_vector(x,y,z);
+        int ans = dot(vct1,vct2);
+        printf("\nThe product is : %d\n",ans);
+    }
+    else if(choice==4){
+        printf("\nEnter the coefficients of first vector: ");
+        scanf("%d %d %d",&x,&y,&z);
+        vct1 = define_vector(x,y,z);
+        float ans = magnitude(vct1);
+        printf("\nThe magnitude is : %.3f\n",ans);
+    }
+    else{
+        printf("Enter a valid choice!!");
     }
 }
