@@ -88,13 +88,13 @@ void complex_mode(){
         case 1:
             printf("\nEnter the real and imaginary parts of the first number: ");
             scanf("%d %d",&re,&img);
-            num1 = set_number(re,img);
+            complex comp1 = set_number(re,img);
             re=0;img=0;
             printf("\nEnter the real and imaginary parts of the second number: ");
             scanf("%d %d",&re,&img);
-            num2 = set_number(re,img);
+            complex comp2 = set_number(re,img);
             re=0;img=0;
-            complex sum = addition(num1,num2);
+            complex sum = addition(comp1,comp2);
             printf("\nThe sum is : %lf+%lf i\n",sum.real,sum.imaginary);
         break;
         case 2:
@@ -112,13 +112,13 @@ void complex_mode(){
         case 3:
             printf("\nEnter the real and imaginary parts of the first number: ");
             scanf("%d %d",&re,&img);
-            num1 = set_number(re,img);
+            complex prod1 = set_number(re,img);
             re=0;img=0;
             printf("\nEnter the real and imaginary parts of the second number: ");
             scanf("%d %d",&re,&img);
-            num2 = set_number(re,img);
+            complex prod2 = set_number(re,img);
             re=0;img=0;
-            complex prod = multiplication(num1,num2);
+            complex prod = multiplication(prod1,prod2);
             printf("\nThe product is : %lf+%lf i\n",prod.real,prod.imaginary);
         break;
         case 4:
