@@ -38,3 +38,18 @@
 * It can be used in homes, schools, colleges, offices. Basically it can be used anywhere where a calculator is required.
 ### ___How?___
 * It asks the user for the mode of calculation. That is it asks if it wants to do simle calculations, or if it wants to do vector arithmetic or complex number calculation. Based on the user choice, it asks what operation it wants to perform. Based on the user choice, it asks for the user input and calculates the output.
+
+## HIGH LEVEL REQUIREMENTS
+
+| ID | Description | Category | 
+| ----- | ----- | ------- | 
+|HLR01|User should able to view the choice of calculation|technical|  
+|HLR02|User should able to select his/her choice |technical|
+|HLR03|The calculator sould able perform the calculation desired by the user|technical|
+|HLR04|The calculator should provide correct and accurate result|technical| 
+
+## LOW LEVEL REQUIREMENTS
+ | ID | DESCRIPTION                                             | STATUS      |    
+|-------------|--------------------------------------------------------------|------------- |
+ | Accuracy |It should secure give correct and accurate output  | Implemented    |
+|  Performanace       |The calculator should operate not only numbers, but also complex numbers and vectors | Implemented    |
