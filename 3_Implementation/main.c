@@ -144,7 +144,6 @@ void complex_mode(){
 }
 void vector_mode(void){
     int choice;
-    vector vct1,vct2;
     int x,y,z;
     printf("\n1. Addition\n2. Subtraction\n3. Dot product\n");
     printf("4. Magnitude\n\nEnter your choice? ");
@@ -152,41 +151,41 @@ void vector_mode(void){
     if(choice==1){
         printf("\nEnter the coefficients of first vector: ");
         scanf("%d %d %d",&x,&y,&z);
-        vct1 = define_vector(x,y,z);
+        vector vct1 = define_vector(x,y,z);
         x=0,y=0,z=0;
         printf("\nEnter the coefficients of second vector: ");
         scanf("%d %d %d",&x,&y,&z);
-        vct2 = define_vector(x,y,z);
+        vector vct2 = define_vector(x,y,z);
         vector ans = sum(vct1,vct2);
         printf("\nThe sum is : %di + %dj +%dk\n",ans.x,ans.y,ans.z);
     }
     else if(choice==2){
-         printf("\nEnter the coefficients of first vector: ");
+        printf("\nEnter the coefficients of first vector: ");
         scanf("%d %d %d",&x,&y,&z);
-        vct1 = define_vector(x,y,z);
+        vector vect1 = define_vector(x,y,z);
         x=0,y=0,z=0;
         printf("\nEnter the coefficients of second vector: ");
         scanf("%d %d %d",&x,&y,&z);
-        vct2 = define_vector(x,y,z);
-        vector ans = difference(vct1,vct2);
+        vector vect2 = define_vector(x,y,z);
+        vector ans = difference(vect1,vect2);
         printf("\nThe difference is : %di + %dj +%dk\n",ans.x,ans.y,ans.z);
     }
     else if(choice==3){
         printf("\nEnter the coefficients of first vector: ");
         scanf("%d %d %d",&x,&y,&z);
-        vct1 = define_vector(x,y,z);
+        vector vector1 = define_vector(x,y,z);
         x=0,y=0,z=0;
         printf("\nEnter the coefficients of second vector: ");
         scanf("%d %d %d",&x,&y,&z);
-        vct2 = define_vector(x,y,z);
-        int ans = dot(vct1,vct2);
+        vector vector2 = define_vector(x,y,z);
+        int ans = dot(vector1,vector2);
         printf("\nThe product is : %d\n",ans);
     }
     else if(choice==4){
         printf("\nEnter the coefficients of first vector: ");
         scanf("%d %d %d",&x,&y,&z);
-        vct1 = define_vector(x,y,z);
-        float ans = magnitude(vct1);
+        vector vect = define_vector(x,y,z);
+        float ans = magnitude(vect);
         printf("\nThe magnitude is : %.3f\n",ans);
     }
     else{
